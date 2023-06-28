@@ -1,0 +1,18 @@
+.container{
+    background-color: #395B64;
+    color: #E7F6F2;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px auto;
+    width: 90%;
+}
+
+.tasksContainer{
+    width: 80%;
+}
+
+.button{
+    margin: 5px;
+    font-family: "changa";
+}

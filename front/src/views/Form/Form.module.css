@@ -1,0 +1,36 @@
+.container{
+    display:flex ;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    max-width: 350px;
+    height: 400px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: #395B64;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+    color:#E7F6F2;
+}
+.containerTitle{
+    display:flex ;
+    flex-direction: column;
+}
+.containerArea{
+    display:flex ;
+    flex-direction: column;
+}
+.labels{
+    padding: 10px;
+    font-size: 20px;
+}
+.inputTitle{
+    height: 20px;
+}
+.inputText{
+    height: 120px;
+    resize: none;
+}
+.button{
+    font-family: "changa";
+    width: 65px;
+}
