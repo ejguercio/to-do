@@ -25,10 +25,19 @@
 }
 .inputTitle{
     height: 20px;
+    width: 300px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "changa";
 }
 .inputText{
     height: 120px;
+    width: 300PX;
     resize: none;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: "changa";
 }
 .button{
     font-family: "changa";
