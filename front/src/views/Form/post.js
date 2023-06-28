@@ -8,7 +8,7 @@ export const postTask = async (inputsForm) => {
             body: JSON.stringify(inputsForm)
         })
         const data = await response.json()
-        
+        //console.log(data)
         if (!response.ok) throw Error(data.error)
         alert(data.message)
     } catch (error) {
