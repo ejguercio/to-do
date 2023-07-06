@@ -9,3 +9,5 @@ pero sin depender de Redux, Axios o Sequelize
 - Ver la lista completa de tareas.
 - Actualizar el contenido de una tarea existente.
 - Eliminar tareas de la lista.
+
+![gif](https://i.ibb.co/9tS75Dh/todo-List-2.gif)
