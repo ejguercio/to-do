@@ -7,7 +7,7 @@ const endpoint = "http://localhost:3001/tasks"
 
 const Form = () => {
     const params = useParams()
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const [inputs, setInputs] = useState({ //estado local
         title: "",
         description: ""
@@ -18,8 +18,12 @@ const Form = () => {
     const handleSubmit = (event) => {//enviar formulario
         event.preventDefault(); //si hay id actualizo tarea correspondiente sino la creo 
         (params.id) ? putTask(params.id, inputs) : postTask(inputs)
-        navigate("/")
+        setTimeout(() => {
+            navigate("/")
+        }, 1000); // Retraso de 1 segundo (1000 milisegundos)
     };
+
+
     const loadTask = async (id) => {
         const response = await fetch(`${endpoint}/${id}`)
         const data = await response.json()
