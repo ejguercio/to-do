@@ -17,7 +17,6 @@ const Task = ({ id, title, description }) => {
     };
 
     return (
-
         <div className={css.container}>
             <div className={css.tasksContainer}>
                 <h2>{title}</h2>

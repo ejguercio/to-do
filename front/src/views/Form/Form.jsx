@@ -12,6 +12,7 @@ const Form = () => {
         title: "",
         description: ""
     });
+    
     const handleChange = (event) => { //controlar formulario
         setInputs({ ...inputs, [event.target.name]: event.target.value })
     };
@@ -22,7 +23,6 @@ const Form = () => {
             navigate("/")
         }, 1000); // Retraso de 1 segundo (1000 milisegundos)
     };
-
 
     const loadTask = async (id) => {
         const response = await fetch(`${endpoint}/${id}`)
