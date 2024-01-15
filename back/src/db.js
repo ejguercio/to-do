@@ -14,10 +14,10 @@ const pool = new Pool({
 })
 
 pool.connect((err) => {
-    if (err) {
-        console.log(err);
-    } else {
+    try {
         console.log("Connected to database");
+    } catch (error) {
+        console.log(err);
     }
 })
 module.exports = pool;
