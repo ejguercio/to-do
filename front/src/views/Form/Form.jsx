@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { postTask } from "./post";
 import { useParams, useNavigate } from "react-router-dom";
 import { putTask } from "./put";
-const endpoint = "http://localhost:3001/tasks"
+const BASE_URL = import.meta.env.VITE_BACKEND_URL
 
 const Form = () => {
     const params = useParams()
@@ -25,7 +25,7 @@ const Form = () => {
     };
 
     const loadTask = async (id) => {
-        const response = await fetch(`${endpoint}/${id}`)
+        const response = await fetch(`${BASE_URL}tasks/${id}`)
         const data = await response.json()
         setInputs({ title: data.title, description: data.description });
     }
