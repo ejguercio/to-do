@@ -12,10 +12,10 @@ const getAllTasks = async (req, res) => {
         const result = await pool.query("SELECT * FROM task ORDER BY id OFFSET $1 LIMIT $2", [offset, pageSize]);
 
         // Consulta para contar el total de tareas
-        const totalCountResult = await pool.query("SELECT COUNT(*) FROM task");
-        const totalCount = parseInt(totalCountResult.rows[0].count, 10);
+        const { rows } = await pool.query("SELECT COUNT(*) FROM task");
+        const totalTasksCount = parseInt(rows[0].count, 10);
 
-        return res.status(200).json({ taksPerPage: result.rows, totalTaks: totalCount });
+        return res.status(200).json({ taksPerPage: result.rows, totalTaks: totalTasksCount });
     } catch (error) {
         return res.status(400).json({ error: error.message });
     }
