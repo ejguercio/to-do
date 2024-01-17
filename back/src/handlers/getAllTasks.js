@@ -13,9 +13,9 @@ const getAllTasks = async (req, res) => {
 
         // Consulta para contar el total de tareas
         const { rows } = await pool.query("SELECT COUNT(*) FROM task");
-        const totalTasksCount = parseInt(rows[0].count, 10);
+        const totalPages = Math.ceil((parseInt(rows[0].count, 10)) / pageSize);
 
-        return res.status(200).json({ taksPerPage: result.rows, totalTaks: totalTasksCount });
+        return res.status(200).json({ taksPerPage: result.rows, totalPages });
     } catch (error) {
         return res.status(400).json({ error: error.message });
     }
