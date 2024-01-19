@@ -1,5 +1,13 @@
+.tasksContainer{
+    min-height: 70vh;
+}
+
 .buttons{
     margin: 5px;
     font-family: "changa";
     width: 70px;
+}
+
+.buttons:hover{
+    box-shadow: 1px 1px cornsilk;
 }

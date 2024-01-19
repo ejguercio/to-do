@@ -11,13 +11,21 @@
 .tasksContainer{
     width: 80%;
 }
+
 .buttonsContainer{
     margin-right: 10px;
 }
+
 .button{
     margin: 5px;
     font-family: "changa";
     width: 60px;
+}
+
+.button:hover{
+    box-shadow: 1px 1px cornsilk;
+    background-color: #2C3333;
+    color:cornsilk
 }
 
 @media screen and (max-width: 767px) {

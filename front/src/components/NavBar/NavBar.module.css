@@ -16,3 +16,9 @@
 .button{
     font-family: "changa";
 }
+
+.button:hover{
+    box-shadow: 1px 1px cornsilk;
+    background-color: #2C3333;
+    color:cornsilk
+}

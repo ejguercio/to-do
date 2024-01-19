@@ -29,7 +29,7 @@ const TasksList = () => {
     }
     return (
         <main>
-            <section>
+            <section className={css.tasksContainer}>
                 {tasks.map(task => {
                     return(
                         <Task
