@@ -16,12 +16,13 @@ const Form = () => {
     const handleChange = (event) => { //controlar formulario
         setInputs({ ...inputs, [event.target.name]: event.target.value })
     };
-    const handleSubmit = (event) => {//enviar formulario
+    const handleSubmit = async (event) => {//enviar formulario
         event.preventDefault(); //si hay id actualizo tarea correspondiente sino la creo 
-        (params.id) ? putTask(params.id, inputs) : postTask(inputs)
+        (params.id) ? await putTask(params.id, inputs, navigate) : await postTask(inputs)
+        
         setTimeout(() => {
             navigate("/")
-        }, 1000); // Retraso de 1 segundo (1000 milisegundos)
+        }, 2500)
     };
 
     const loadTask = async (id) => {

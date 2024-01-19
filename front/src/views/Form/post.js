@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 const BASE_URL = import.meta.env.VITE_BACKEND_URL
 
 export const postTask = async (inputsForm) => {
@@ -7,11 +8,31 @@ export const postTask = async (inputsForm) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(inputsForm)
         })
+        if (!response.ok) throw Error(data.error)
         const data = await response.json()
 
-        if (!response.ok) throw Error(data.error)
-        alert(data.message)
+        //MENSAJE
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "Task created successfully"
+        });
     } catch (error) {
-        alert(error.message)//revisar luego
+        console.log(error)
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.message,
+        });
     }
 };
