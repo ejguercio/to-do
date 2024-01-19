@@ -11,3 +11,8 @@
 .buttons:hover{
     box-shadow: 1px 1px cornsilk;
 }
+
+.pages{
+    color: cornsilk;
+    margin: 0px 5px;
+}

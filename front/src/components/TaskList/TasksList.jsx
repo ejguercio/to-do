@@ -46,6 +46,9 @@ const TasksList = () => {
                     disabled={currentPage === 1}
                     onClick={handlePrevPage}
                 >PREVIOUS</button>
+                <span className={css.pages}>
+                    {currentPage} of {totalPages}
+                </span>
                 <button
                     className={css.buttons}
                     disabled={currentPage === totalPages}
