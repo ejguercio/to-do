@@ -19,7 +19,7 @@ const Form = () => {
     const handleSubmit = async (event) => {//enviar formulario
         event.preventDefault(); //si hay id actualizo tarea correspondiente sino la creo 
         (params.id) ? await putTask(params.id, inputs, navigate) : await postTask(inputs)
-        
+
         setTimeout(() => {
             navigate("/")
         }, 2500)
@@ -39,11 +39,11 @@ const Form = () => {
         <form className={css.container} onSubmit={handleSubmit}>
             <div className={css.containerTitle}>
                 <label className={css.labels}>Title</label>
-                <input className={css.inputTitle} name="title" value={inputs.title} onChange={handleChange} />
+                <input className={css.inputTitle} name="title" value={inputs.title} onChange={handleChange} maxLength={30} />
             </div>
             <div className={css.containerArea}>
                 <label className={css.labels}>Description</label>
-                <textarea className={css.inputText} name="description" value={inputs.description} onChange={handleChange} />
+                <textarea className={css.inputText} name="description" value={inputs.description} onChange={handleChange} maxLength={350} />
             </div>
             <button className={css.button}>SAVE</button>
         </form>
